@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_BlogWebLayout.cshtml";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <div class="col-md-1" ng-init="loadPostFunc()">
+        <table id="myTable" class="display">
+            <thead>
+                <tr>
+                    <th>Author</th>
+                    <th>Post Content</th>
+                    <th>Post Type</th>
+                    <th>Date Created By</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="postData in postsData">
+                    <td>{{postData.uData.username}}</td>
+                    <td>{{postData.pData.content}}</td>
+                    <td>{{postData.pData.post_type}}</td>
+                    <td>{{postData.pData.createAt}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-init="loadChartFunc2()">
+        <canvas id="bar" class="chart chart-bar"
+                chart-data="data" chart-labels="labels">
+            chart-series="series"
+        </canvas>
+    </div>
+    <div ng-init="loadChartFunc2()">
+        <canvas id="polar-area" class="chart chart-polar-area"
+                chart-data="data" chart-labels="labels" chart-options="options">
+        </canvas>
+    </div>
+</body>
+
+</html>
+
+
